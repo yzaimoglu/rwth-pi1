@@ -14,6 +14,13 @@ extern int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int a
 extern void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY);
 extern bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY);
 
+/*
+ * @brief Funktion zum Ausführen eines Computerzuges
+ * @param spielfeld Spielfeld, auf dem gespielt wird
+ * @param aktuellerSpieler der aktuelle Spieler
+ *
+ * @return false, wenn der Computer keinen Zug spielen kann, true wenn er das kann
+ */
 bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {
     if (moeglicheZuege(spielfeld,aktuellerSpieler) == 0)

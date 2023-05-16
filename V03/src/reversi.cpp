@@ -1,7 +1,7 @@
 /**
  * Praktikum Informatik 1 MMXXIII
  *
- * @file main.cpp
+ * @file reversi.cpp
  *
  * Die Funktionen fuer das Spiel Reversi
  */
@@ -291,11 +291,11 @@ int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuelle
 }
 
 /**
- * @brief Funktion, die ausgibt, ob der Zug menschlich war
+ * @brief Funktion führt einen menschlichen Zug aus
  *
  * @param spielfeld Das aktuelle Spielfeld
  * @param aktuellerSpieler Der aktuelle Spieler
- * @return true wenn menschlich, false wenn nicht
+ * @return true wenn ein der Zug ausgeführt wurde, false wenn keine möglichen Züge für den Spieler da sind
  */
 bool menschlicherZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {
