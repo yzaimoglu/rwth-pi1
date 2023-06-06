@@ -9,7 +9,7 @@
 #include "Vektor.h"
 #define PI 3.14159265359
 #define ERDRADIUS 6371
-#define ROTATERAD -PI/300000000
+#define ROTATERAD PI/300000000
 #define EPSILON 0.01
 
 using namespace std;

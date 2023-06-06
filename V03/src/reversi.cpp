@@ -405,11 +405,11 @@ int main()
     
     // Die folgenden drei Zeilen werden auskommentiert oder geloescht, nachdem Sie die Funktion spielen()
     // implementiert haben (waeren sonst doppelt)
-    int spielfeld[GROESSE_Y][GROESSE_X];
-
-    initialisiereSpielfeld(spielfeld);
-
-    zeigeSpielfeld(spielfeld);
+    //    int spielfeld[GROESSE_Y][GROESSE_X];
+    //
+    //    initialisiereSpielfeld(spielfeld);
+    //
+    //    zeigeSpielfeld(spielfeld);
 
     // int spielerTyp[2] = { COMPUTER, COMPUTER };  // Feld, das Informationen ueber den Typ des Spielers enthaelt. MENSCH(=1) oder COPMUTER(=2)
     // spielen(spielerTyp);
@@ -438,7 +438,7 @@ int main()
 
 		// Weiterspielaufforderung
 		std::cout << "Möchtest du weiter spielen?" << std::endl;
-		std::cout << "Wenn ja bitte gebe 0 ein." << std::endl;
+		std::cout << "Wenn ja bitte gebe 1 ein." << std::endl;
 		std::cin >> weiterspielen;
     } while(weiterspielen);
 
