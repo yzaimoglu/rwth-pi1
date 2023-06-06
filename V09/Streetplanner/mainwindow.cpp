@@ -45,6 +45,19 @@ void MainWindow::on_pushButton_teste_was_clicked()
 
 void MainWindow::on_actionBeenden_triggered()
 {
-    exit(0);
+    close();
+}
+
+
+void MainWindow::on_actionClear_Scene_triggered()
+{
+    scene.clear();
+}
+
+
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox aboutBox;
+    aboutBox.about(this, QString("Über das Programm"), QString("Streetplanner ist ein Straßenplanner."));
 }
 

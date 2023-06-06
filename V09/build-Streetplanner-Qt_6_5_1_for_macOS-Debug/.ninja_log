@@ -1,51 +1,15 @@
 # ninja log v5
-5	46	1686092613115608951	Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-5	46	1686092613115608951	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-5	46	1686092613115608951	Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-316	953	1686091391180028635	CMakeFiles/Streetplanner.dir/Streetplanner_autogen/mocs_compilation.cpp.o	c899ef96755f1388
-316	961	1686091391188224071	CMakeFiles/Streetplanner.dir/main.cpp.o	436f70aa652b60de
-49	858	1686092613923622180	CMakeFiles/Streetplanner.dir/mainwindow.cpp.o	8d1e4c9d6bcd83e5
-5	46	1686092613115608951	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-858	998	1686092614065853240	Streetplanner.app/Contents/MacOS/Streetplanner	61c54a56e6c975f0
-7	50	1686092630747526880	Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-7	50	1686092630747526880	Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-7	50	1686092630747526880	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-7	50	1686092630747526880	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-53	865	1686092631558181587	CMakeFiles/Streetplanner.dir/mainwindow.cpp.o	8d1e4c9d6bcd83e5
-865	1007	1686092631702328953	Streetplanner.app/Contents/MacOS/Streetplanner	61c54a56e6c975f0
-6	48	1686092680335697853	Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-6	48	1686092680335697853	Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-6	48	1686092680335697853	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-6	48	1686092680335697853	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-51	853	1686092681136809615	CMakeFiles/Streetplanner.dir/mainwindow.cpp.o	8d1e4c9d6bcd83e5
-853	994	1686092681280114557	Streetplanner.app/Contents/MacOS/Streetplanner	61c54a56e6c975f0
-5	46	1686092704237688241	Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-5	46	1686092704237688241	Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-5	46	1686092704237688241	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-5	46	1686092704237688241	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-49	838	1686092705025583949	CMakeFiles/Streetplanner.dir/mainwindow.cpp.o	8d1e4c9d6bcd83e5
-838	979	1686092705168494740	Streetplanner.app/Contents/MacOS/Streetplanner	61c54a56e6c975f0
-6	46	1686092722813296259	Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-6	46	1686092722813296259	Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-6	46	1686092722813296259	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-6	46	1686092722813296259	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-49	840	1686092723603002592	CMakeFiles/Streetplanner.dir/mainwindow.cpp.o	8d1e4c9d6bcd83e5
-841	982	1686092723746682535	Streetplanner.app/Contents/MacOS/Streetplanner	61c54a56e6c975f0
-5	48	1686092752907256804	Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-5	48	1686092752907256804	Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-5	48	1686092752907256804	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-5	48	1686092752907256804	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-52	902	1686092753755544365	CMakeFiles/Streetplanner.dir/mainwindow.cpp.o	8d1e4c9d6bcd83e5
-902	1039	1686092753896463291	Streetplanner.app/Contents/MacOS/Streetplanner	61c54a56e6c975f0
-5	325	1686092835405084000	Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-5	325	1686092835405084000	Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-5	325	1686092835405084000	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-5	325	1686092835405084000	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-325	1001	1686092836084125997	CMakeFiles/Streetplanner.dir/Streetplanner_autogen/mocs_compilation.cpp.o	c899ef96755f1388
-325	1030	1686092836114335515	CMakeFiles/Streetplanner.dir/main.cpp.o	436f70aa652b60de
-5	33	1686092839620842456	Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-5	33	1686092839620842456	Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-5	33	1686092839620842456	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
-5	33	1686092839620842456	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
-36	914	1686092840497427169	CMakeFiles/Streetplanner.dir/mainwindow.cpp.o	8d1e4c9d6bcd83e5
-914	1057	1686092840642437776	Streetplanner.app/Contents/MacOS/Streetplanner	61c54a56e6c975f0
+866	1003	1686093467496359766	Streetplanner.app/Contents/MacOS/Streetplanner	61c54a56e6c975f0
+5	46	1686093466541296788	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
+50	866	1686093467356406551	CMakeFiles/Streetplanner.dir/mainwindow.cpp.o	8d1e4c9d6bcd83e5
+330	1075	1686093457181449435	CMakeFiles/Streetplanner.dir/Streetplanner_autogen/mocs_compilation.cpp.o	c899ef96755f1388
+330	1036	1686093457140531904	CMakeFiles/Streetplanner.dir/main.cpp.o	436f70aa652b60de
+5	46	1686093466541296788	Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
+5	46	1686093466541296788	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
+5	46	1686093466541296788	Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
+5	45	1686093481534912054	Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
+5	45	1686093481534912054	Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
+5	45	1686093481534912054	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/timestamp	fc6c7fdf6d5daaa6
+5	45	1686093481534912054	/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/Streetplanner_autogen/mocs_compilation.cpp	fc6c7fdf6d5daaa6
+49	872	1686093482357095764	CMakeFiles/Streetplanner.dir/mainwindow.cpp.o	8d1e4c9d6bcd83e5
+872	1022	1686093482510231840	Streetplanner.app/Contents/MacOS/Streetplanner	61c54a56e6c975f0

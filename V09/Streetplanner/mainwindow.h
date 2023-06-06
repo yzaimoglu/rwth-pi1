@@ -21,6 +21,12 @@ private slots:
 
     void on_actionBeenden_triggered();
 
+    void on_actionClear_Scene_triggered();
+
+    void on_actionAbout_triggered();
+
+    void on_actionA_triggered();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene scene;

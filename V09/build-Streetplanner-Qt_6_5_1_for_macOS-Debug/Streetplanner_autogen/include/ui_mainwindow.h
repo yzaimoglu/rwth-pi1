@@ -32,6 +32,8 @@ public:
     QAction *actionOpen;
     QAction *actionSave;
     QAction *actionBeenden;
+    QAction *actionClear_Scene;
+    QAction *actionAbout;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QLabel *label_eingabe;
@@ -41,6 +43,8 @@ public:
     QGraphicsView *graphicsView;
     QMenuBar *menubar;
     QMenu *menuFile;
+    QMenu *menuScene;
+    QMenu *menuInformation;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -57,6 +61,10 @@ public:
         actionBeenden = new QAction(MainWindow);
         actionBeenden->setObjectName("actionBeenden");
         actionBeenden->setShortcutContext(Qt::WindowShortcut);
+        actionClear_Scene = new QAction(MainWindow);
+        actionClear_Scene->setObjectName("actionClear_Scene");
+        actionAbout = new QAction(MainWindow);
+        actionAbout->setObjectName("actionAbout");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -94,16 +102,24 @@ public:
         menubar->setGeometry(QRect(0, 0, 800, 24));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
+        menuScene = new QMenu(menubar);
+        menuScene->setObjectName("menuScene");
+        menuInformation = new QMenu(menubar);
+        menuInformation->setObjectName("menuInformation");
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
 
         menubar->addAction(menuFile->menuAction());
+        menubar->addAction(menuScene->menuAction());
+        menubar->addAction(menuInformation->menuAction());
         menuFile->addAction(actionOpen);
         menuFile->addAction(actionSave);
         menuFile->addSeparator();
         menuFile->addAction(actionBeenden);
+        menuScene->addAction(actionClear_Scene);
+        menuInformation->addAction(actionAbout);
 
         retranslateUi(MainWindow);
 
@@ -116,6 +132,14 @@ public:
         actionOpen->setText(QCoreApplication::translate("MainWindow", "Open", nullptr));
         actionSave->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
         actionBeenden->setText(QCoreApplication::translate("MainWindow", "Beenden", nullptr));
+#if QT_CONFIG(shortcut)
+        actionBeenden->setShortcut(QCoreApplication::translate("MainWindow", "Alt+E", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionClear_Scene->setText(QCoreApplication::translate("MainWindow", "Clear Scene", nullptr));
+#if QT_CONFIG(shortcut)
+        actionClear_Scene->setShortcut(QCoreApplication::translate("MainWindow", "Alt+S", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionAbout->setText(QCoreApplication::translate("MainWindow", "Streetplanner", nullptr));
         label_eingabe->setText(QCoreApplication::translate("MainWindow", "Ihre Eingabe", nullptr));
 #if QT_CONFIG(tooltip)
         pushButton_teste_was->setToolTip(QCoreApplication::translate("MainWindow", "Testet, ob Ihre Eingabe eine Zahl oder ein Text ist", nullptr));
@@ -124,6 +148,8 @@ public:
         lineEdit_teste_was->setText(QString());
         lineEdit_teste_was->setPlaceholderText(QCoreApplication::translate("MainWindow", "Ihre Eingabe", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
+        menuScene->setTitle(QCoreApplication::translate("MainWindow", "Scene", nullptr));
+        menuInformation->setTitle(QCoreApplication::translate("MainWindow", "Info", nullptr));
     } // retranslateUi
 
 };
