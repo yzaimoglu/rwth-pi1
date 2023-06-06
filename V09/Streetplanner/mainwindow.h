@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QGraphicsScene>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,7 +19,10 @@ public:
 private slots:
     void on_pushButton_teste_was_clicked();
 
+    void on_actionBeenden_triggered();
+
 private:
     Ui::MainWindow *ui;
+    QGraphicsScene scene;
 };
 #endif // MAINWINDOW_H

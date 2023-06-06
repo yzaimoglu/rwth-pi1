@@ -10,12 +10,14 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -27,6 +29,9 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionOpen;
+    QAction *actionSave;
+    QAction *actionBeenden;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QLabel *label_eingabe;
@@ -35,6 +40,7 @@ public:
     QSpacerItem *verticalSpacer;
     QGraphicsView *graphicsView;
     QMenuBar *menubar;
+    QMenu *menuFile;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -42,6 +48,15 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(800, 600);
+        actionOpen = new QAction(MainWindow);
+        actionOpen->setObjectName("actionOpen");
+        actionOpen->setEnabled(false);
+        actionSave = new QAction(MainWindow);
+        actionSave->setObjectName("actionSave");
+        actionSave->setEnabled(false);
+        actionBeenden = new QAction(MainWindow);
+        actionBeenden->setObjectName("actionBeenden");
+        actionBeenden->setShortcutContext(Qt::WindowShortcut);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -77,10 +92,18 @@ public:
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 800, 24));
+        menuFile = new QMenu(menubar);
+        menuFile->setObjectName("menuFile");
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
+
+        menubar->addAction(menuFile->menuAction());
+        menuFile->addAction(actionOpen);
+        menuFile->addAction(actionSave);
+        menuFile->addSeparator();
+        menuFile->addAction(actionBeenden);
 
         retranslateUi(MainWindow);
 
@@ -90,6 +113,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        actionOpen->setText(QCoreApplication::translate("MainWindow", "Open", nullptr));
+        actionSave->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
+        actionBeenden->setText(QCoreApplication::translate("MainWindow", "Beenden", nullptr));
         label_eingabe->setText(QCoreApplication::translate("MainWindow", "Ihre Eingabe", nullptr));
 #if QT_CONFIG(tooltip)
         pushButton_teste_was->setToolTip(QCoreApplication::translate("MainWindow", "Testet, ob Ihre Eingabe eine Zahl oder ein Text ist", nullptr));
@@ -97,6 +123,7 @@ public:
         pushButton_teste_was->setText(QCoreApplication::translate("MainWindow", "Teste was", nullptr));
         lineEdit_teste_was->setText(QString());
         lineEdit_teste_was->setPlaceholderText(QCoreApplication::translate("MainWindow", "Ihre Eingabe", nullptr));
+        menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 
 };

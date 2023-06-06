@@ -432,6 +432,7 @@ Streetplanner_autogen/timestamp: \
   /Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
   /Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
   /Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
+  /Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Versions/A/Headers/qpen.h \
   /Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
   /Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
   /Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Versions/A/Headers/qpolygon.h \
@@ -443,7 +444,9 @@ Streetplanner_autogen/timestamp: \
   /Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
   /Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
   /Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
+  /Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsScene \
   /Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
+  /Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsscene.h \
   /Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
   /Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
   /Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Versions/A/Headers/qtabwidget.h \
