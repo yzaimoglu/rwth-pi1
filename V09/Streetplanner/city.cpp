@@ -30,3 +30,12 @@ int City::getX() {
 int City::getY() {
     return this->y;
 }
+
+bool City::operator==(const City& city) const {
+    // Wenn die Städte übereinstimmen, dann ergibt str.compare() == 0, deswegen !str.compare()
+    return !getName().compare(city.getName());
+}
+
+bool City::isSame(QString cityName) {
+    return !getName().compare(cityName);
+}

@@ -43,7 +43,7 @@ void Map::draw(QGraphicsScene& scene) {
 City* Map::findCity(const QString cityName) const {
     // str.compare() --> 0 wenn beide Strings übereinstimmen
     for(auto it = vectorCities.begin(); it != vectorCities.end(); ++it) {
-        if(!(*it)->getName().compare(cityName)) {
+        if((*it)->isSame(cityName)) {
             return *it;
         }
     }
@@ -57,14 +57,10 @@ City* Map::findCity(const QString cityName) const {
      */
 QVector<Street*> Map::getStreetList(const City* city) const {
     QVector<Street*> connectedStreets;
-    QString cityName = city->getName();
     for(auto it = vectorStreets.begin(); it != vectorStreets.end(); ++it)
     {
-        City* firstCity = (*it)->getFirstCity();
-        City* secondCity = (*it)->getSecondCity();
         // Überprüfen ob einer der Städte der Straße die Straße aus dem Parameter ist
-        // Könnte man auch mit einer Operatorüberladung von == machen
-        if(!cityName.compare(firstCity->getName()) || !cityName.compare(secondCity->getName()))
+        if(city == (*it)->getFirstCity() || city == (*it)->getSecondCity())
         {
             connectedStreets.append(*it);
         }
@@ -79,9 +75,9 @@ QVector<Street*> Map::getStreetList(const City* city) const {
      * @return Opposite city of the street. If city has no connection to street returns nullptr.
      */
 City* Map::getOppositeCity(const Street* street, const City* city) const {
-    if(!street->getFirstCity()->getName().compare(city->getName())) {
+    if(street->getFirstCity() == city) {
         return street->getSecondCity();
-    } else if(!street->getSecondCity()->getName().compare(city->getName())) {
+    } else if(street->getSecondCity() == city) {
         return street->getFirstCity();
     }
     // Die Straße enthält nicht die Stadt

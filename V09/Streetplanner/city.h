@@ -12,6 +12,9 @@ public:
     QString getName() const;
     int getX();
     int getY();
+    bool operator==(const City& city) const;
+    bool isSame(QString cityName);
+
 private:
     QString name;
     int x;
