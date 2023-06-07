@@ -1,9 +1,0 @@
-/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/CMakeFiles/Streetplanner.dir
-/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/CMakeFiles/edit_cache.dir
-/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/CMakeFiles/rebuild_cache.dir
-/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/CMakeFiles/list_install_components.dir
-/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/CMakeFiles/install.dir
-/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/CMakeFiles/install/local.dir
-/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/CMakeFiles/install/strip.dir
-/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/CMakeFiles/Streetplanner_autogen_timestamp_deps.dir
-/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/build-Streetplanner-Qt_6_5_1_for_macOS-Debug/CMakeFiles/Streetplanner_autogen.dir

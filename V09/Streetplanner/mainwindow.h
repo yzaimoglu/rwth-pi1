@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 
+#include "map.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -25,10 +27,13 @@ private slots:
 
     void on_actionAbout_triggered();
 
-    void on_actionA_triggered();
+    void on_pushButton_teste_draw_city_clicked();
+
+    void on_pushButton_teste_map_functions_clicked();
 
 private:
     Ui::MainWindow *ui;
     QGraphicsScene scene;
+    Map map;
 };
 #endif // MAINWINDOW_H
