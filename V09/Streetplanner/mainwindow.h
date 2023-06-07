@@ -40,6 +40,10 @@ private slots:
 
     void on_pushButton_teste_abstract_map_clicked();
 
+    void on_pushButton_teste_dijkstra_algorithm_clicked();
+
+    void on_pushButton_dijkstra_dialog_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene scene;

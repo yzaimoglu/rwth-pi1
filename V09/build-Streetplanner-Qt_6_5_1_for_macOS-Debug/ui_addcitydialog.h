@@ -10,13 +10,12 @@
 #define UI_ADDCITYDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 
 QT_BEGIN_NAMESPACE
@@ -27,10 +26,11 @@ public:
     QFormLayout *formLayout;
     QLabel *label_add_city;
     QLineEdit *lineEdit_city_name;
-    QDialogButtonBox *buttonBox;
     QLineEdit *lineEdit_x_coord;
     QLineEdit *lineEdit_y_coord;
     QSpacerItem *verticalSpacer;
+    QPushButton *pushButton_cancel;
+    QPushButton *pushButton_create;
 
     void setupUi(QDialog *AddCityDialog)
     {
@@ -49,13 +49,6 @@ public:
 
         formLayout->setWidget(1, QFormLayout::LabelRole, lineEdit_city_name);
 
-        buttonBox = new QDialogButtonBox(AddCityDialog);
-        buttonBox->setObjectName("buttonBox");
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-
-        formLayout->setWidget(5, QFormLayout::LabelRole, buttonBox);
-
         lineEdit_x_coord = new QLineEdit(AddCityDialog);
         lineEdit_x_coord->setObjectName("lineEdit_x_coord");
 
@@ -70,10 +63,21 @@ public:
 
         formLayout->setItem(4, QFormLayout::LabelRole, verticalSpacer);
 
+        pushButton_cancel = new QPushButton(AddCityDialog);
+        pushButton_cancel->setObjectName("pushButton_cancel");
+
+        formLayout->setWidget(5, QFormLayout::LabelRole, pushButton_cancel);
+
+        pushButton_create = new QPushButton(AddCityDialog);
+        pushButton_create->setObjectName("pushButton_create");
+
+        formLayout->setWidget(6, QFormLayout::LabelRole, pushButton_create);
+
 
         retranslateUi(AddCityDialog);
-        QObject::connect(buttonBox, &QDialogButtonBox::accepted, AddCityDialog, qOverload<>(&QDialog::accept));
-        QObject::connect(buttonBox, &QDialogButtonBox::rejected, AddCityDialog, qOverload<>(&QDialog::reject));
+
+        pushButton_create->setDefault(true);
+
 
         QMetaObject::connectSlotsByName(AddCityDialog);
     } // setupUi
@@ -94,6 +98,8 @@ public:
         lineEdit_y_coord->setToolTip(QCoreApplication::translate("AddCityDialog", "Y-Koordinate der Stadt", nullptr));
 #endif // QT_CONFIG(tooltip)
         lineEdit_y_coord->setPlaceholderText(QCoreApplication::translate("AddCityDialog", "Y-Koordinate", nullptr));
+        pushButton_cancel->setText(QCoreApplication::translate("AddCityDialog", "Abbrechen", nullptr));
+        pushButton_create->setText(QCoreApplication::translate("AddCityDialog", "Erstellen", nullptr));
     } // retranslateUi
 
 };

@@ -7,6 +7,10 @@ Map::Map()
 }
 
 void Map::addCity(City* city) {
+    if(getCityList().contains(city)) {
+        qDebug() << QString("Die Stadt %1 ist bereits auf der Map.").arg(city->getName());
+        return;
+    }
     vectorCities.append(city);
     qDebug() << QString("Die Stadt %1 wurde der Map hinzugefügt.").arg(city->getName());
 }
@@ -97,4 +101,8 @@ double Map::getLength(const Street* street) const {
     //    qDebug() << yCoords;
     //    qDebug() << sqrt(xCoords * xCoords + yCoords * yCoords);
     return sqrt(xCoords * xCoords + yCoords * yCoords);
+}
+
+QVector<City*> Map::getCityList() {
+    return vectorCities;
 }

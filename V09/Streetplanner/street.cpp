@@ -11,6 +11,13 @@ Street::Street(City* firstCity, City* secondCity)
 void Street::draw(QGraphicsScene& scene) {
     QPen pen;
     pen.setWidth(2);
+    scene.addLine(this->firstCity->getX(), this->firstCity->getY(), this->secondCity->getX(), this->secondCity->getY(), pen);
+    qDebug() << QString("Die Straße zwischen den Städten %1 und %2 wurde eingezeichnet.").arg(this->firstCity->getName()).arg(this->secondCity->getName());
+}
+
+void Street::drawRed(QGraphicsScene& scene) {
+    QPen pen;
+    pen.setWidth(3);
     pen.setColor(Qt::red);
     scene.addLine(this->firstCity->getX(), this->firstCity->getY(), this->secondCity->getX(), this->secondCity->getY(), pen);
     qDebug() << QString("Die Straße zwischen den Städten %1 und %2 wurde eingezeichnet.").arg(this->firstCity->getName()).arg(this->secondCity->getName());

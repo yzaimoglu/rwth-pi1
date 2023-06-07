@@ -9,6 +9,8 @@
 #include "street.h"
 #include "addcitydialog.h"
 #include "mapionrw.h"
+#include "dijkstra.h"
+#include "dijkstradialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -135,33 +137,26 @@ void MainWindow::on_checkBox_test_buttons_ausblenden_clicked()
         ui->pushButton_teste_draw_city->show();
         ui->pushButton_teste_map_functions->show();
         ui->pushButton_teste_was->show();
+        ui->pushButton_teste_abstract_map->show();
+        ui->pushButton_teste_dijkstra_algorithm->show();
     } else {
         ui->label_eingabe->hide();
         ui->lineEdit_teste_was->hide();
         ui->pushButton_teste_draw_city->hide();
         ui->pushButton_teste_map_functions->hide();
         ui->pushButton_teste_was->hide();
+        ui->pushButton_teste_abstract_map->hide();
+        ui->pushButton_teste_dijkstra_algorithm->hide();
     }
 }
 
 
 void MainWindow::on_pushButton_add_city_dialog_clicked()
 {
-    AddCityDialog addCityDialog = AddCityDialog();
-    int statusDialog = addCityDialog.exec();
-    if(!statusDialog) {
-        qDebug() << QString("Hinzufügen einer Stadt abgebrochen.");
-        return;
-    }
-
-    City* createdCity = addCityDialog.createCity();
-    if(createdCity == nullptr) {
-        qDebug() << QString("Die Koordinaten müssen Zahlen sein.");
-        return;
-    }
-
-    qDebug() << QString("Die Stadt %1 mit den Koordinaten x: %2, y: %3 wurde erstellt.").arg(createdCity->getName()).arg(createdCity->getX()).arg(createdCity->getY());
-    map.addCity(createdCity);
+    AddCityDialog addCityDialog = AddCityDialog(this, &map);
+    addCityDialog.exec();
+    scene.clear();
+    map.draw(scene);
 }
 
 
@@ -257,5 +252,55 @@ void MainWindow::on_pushButton_teste_abstract_map_clicked()
     }
 
     qDebug() << "MapTest: End Test of the Map.";
+}
+
+
+void MainWindow::on_pushButton_teste_dijkstra_algorithm_clicked()
+{
+    on_pushButton_mapio_map_fill_clicked();
+
+    QVector<Street*> aachenKoeln = Dijkstra::search(map, QString("Aachen"), QString("Köln"));
+    qDebug() << QString("Kürzeste Strecke von Aachen nach Köln");
+    foreach(Street* street, aachenKoeln) {
+        qDebug() << QString("Von %1 zu %2").arg(street->getFirstCity()->getName()).arg(street->getSecondCity()->getName());
+        street->drawRed(scene);
+    }
+
+    //    QVector<Street*> aachenBonn = Dijkstra::search(map, QString("Aachen"), QString("Bonn"));
+    //    qDebug() << QString("Kürzeste Strecke von Aachen nach Bonn");
+    //    foreach(Street* street, aachenBonn) {
+    //        qDebug() << QString("Von %1 zu %2").arg(street->getFirstCity()->getName()).arg(street->getSecondCity()->getName());
+    //        street->drawRed(scene);
+    //    }
+
+    //    QVector<Street*> bonnDuesseldorf = Dijkstra::search(map, QString("Bonn"), QString("Düsseldorf"));
+    //    qDebug() << QString("Kürzeste Strecke von Bonn nach Düsseldorf");
+    //    foreach(Street* street, bonnDuesseldorf) {
+    //        qDebug() << QString("Von %1 zu %2").arg(street->getFirstCity()->getName()).arg(street->getSecondCity()->getName());
+    //        street->drawRed(scene);
+    //    }
+}
+
+
+void MainWindow::on_pushButton_dijkstra_dialog_clicked()
+{
+    DijkstraDialog dijkstraDialog = DijkstraDialog(this, &map);
+    int statusDialog = dijkstraDialog.exec();
+    if(!statusDialog) {
+        QMessageBox messageBox;
+        messageBox.setText("Suche der kürzesten Strecke abgebrochen.");
+        qDebug() << QString("Suche der kürzesten Strecke abgebrochen.");
+        messageBox.exec();
+        return;
+    }
+
+    scene.clear();
+    map.draw(scene);
+
+    QVector<Street*> kuerzesteWeg = dijkstraDialog.dijkstra();
+
+    foreach(Street* street, kuerzesteWeg) {
+        street->drawRed(scene);
+    }
 }
 

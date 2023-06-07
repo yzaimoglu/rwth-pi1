@@ -12,6 +12,8 @@ SOURCES += \
     abstractmap.cpp \
     addcitydialog.cpp \
     city.cpp \
+    dijkstra.cpp \
+    dijkstradialog.cpp \
     main.cpp \
     mainwindow.cpp \
     map.cpp \
@@ -23,6 +25,8 @@ HEADERS += \
     abstractmap.h \
     addcitydialog.h \
     city.h \
+    dijkstra.h \
+    dijkstradialog.h \
     mainwindow.h \
     map.h \
     mapio.h \
@@ -31,6 +35,7 @@ HEADERS += \
 
 FORMS += \
     addcitydialog.ui \
+    dijkstradialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.

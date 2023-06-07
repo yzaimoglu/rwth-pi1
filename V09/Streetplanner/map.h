@@ -59,6 +59,12 @@ public:
      * @return Length of the street
      */
     double getLength(const Street* street) const;
+
+    /**
+     * @brief Gibt die Liste der Städte als Zeigervektor zürück
+     * @return Liste der Städte als Zeiger
+     */
+    QVector<City*> getCityList();
 private:
     QVector<City*> vectorCities;
     QVector<Street*> vectorStreets;
