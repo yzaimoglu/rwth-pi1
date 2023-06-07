@@ -31,6 +31,10 @@ private slots:
 
     void on_pushButton_teste_map_functions_clicked();
 
+    void on_checkBox_test_buttons_ausblenden_clicked();
+
+    void on_pushButton_add_city_dialog_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene scene;

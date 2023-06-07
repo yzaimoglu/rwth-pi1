@@ -13,7 +13,7 @@
 //  werden genau so gebraucht.
 
 #include "city.h"
-//#include "street.h"
+#include "street.h"
 
 class AbstractMap
 {
@@ -34,7 +34,7 @@ public:
      * @param Pointer to the street to be added
      * @return true if the street has beed added.
      */
-    //virtual bool addStreet(Street*) = 0;
+    virtual bool addStreet(Street*) = 0;
 
     /**
      * @brief Search for a city in this map by given name.

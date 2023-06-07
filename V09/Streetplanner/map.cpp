@@ -11,13 +11,14 @@ void Map::addCity(City* city) {
     qDebug() << QString("Die Stadt %1 wurde der Map hinzugefügt.").arg(city->getName());
 }
 
-void Map::addStreet(Street* street) {
+bool Map::addStreet(Street* street) {
     if(!vectorCities.contains(street->getFirstCity()) || !vectorCities.contains(street->getSecondCity())) {
         qDebug() << QString("Einer der angegebenen Städte %1 und %2 sind nicht auf der Map.").arg(street->getFirstCity()->getName()).arg(street->getSecondCity()->getName());
-        return;
+        return false;
     }
     vectorStreets.append(street);
     qDebug() << QString("Die Straße zwischen den Städten %1 und %2 wurde der Map hinzugefügt.").arg(street->getFirstCity()->getName()).arg(street->getSecondCity()->getName());
+    return true;
 }
 
 void Map::draw(QGraphicsScene& scene) {

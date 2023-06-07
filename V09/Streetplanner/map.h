@@ -23,7 +23,7 @@ public:
      * @brief Fügt einen Zeiger auf eine Straße dem vectorStreets hinzu
      * @param street Zeiger auf eine Straße
      */
-    void addStreet(Street* street);
+    bool addStreet(Street* street);
 
     /**
      * @brief Zeichnet alle Städte und Straßen

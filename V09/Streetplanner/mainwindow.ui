@@ -38,7 +38,14 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
+    <item row="4" column="0">
+     <widget class="QPushButton" name="pushButton_teste_map_functions">
+      <property name="text">
+       <string>Teste Map Funktionen</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -61,7 +68,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2" rowspan="6">
+    <item row="0" column="2" rowspan="8">
      <widget class="QGraphicsView" name="graphicsView"/>
     </item>
     <item row="3" column="0">
@@ -71,10 +78,17 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="pushButton_teste_map_functions">
+    <item row="5" column="0">
+     <widget class="QCheckBox" name="checkBox_test_buttons_ausblenden">
       <property name="text">
-       <string>Teste Map Funktionen</string>
+       <string>Test Buttons ausblenden</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QPushButton" name="pushButton_add_city_dialog">
+      <property name="text">
+       <string>Stadt hinzufügen</string>
       </property>
      </widget>
     </item>
