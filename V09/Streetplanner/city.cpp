@@ -19,7 +19,7 @@ void City::draw(QGraphicsScene& scene) {
     qDebug() << QString("Die Stadt %1 wurde in der Position x:%2, y:%3 gezeichnet.").arg(this->getName()).arg(this->getX()).arg(this->getY());
 }
 
-QString City::getName() {
+QString City::getName() const {
     return this->name;
 }
 

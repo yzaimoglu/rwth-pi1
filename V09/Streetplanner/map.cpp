@@ -34,3 +34,71 @@ void Map::draw(QGraphicsScene& scene) {
         (*it)->draw(scene);
     }
 }
+
+/**
+     * @brief Search for a city in this map by given name.
+     * @param name
+     * @return the city pointer, if city not found nullptr
+     */
+City* Map::findCity(const QString cityName) const {
+    // str.compare() --> 0 wenn beide Strings übereinstimmen
+    for(auto it = vectorCities.begin(); it != vectorCities.end(); ++it) {
+        if(!(*it)->getName().compare(cityName)) {
+            return *it;
+        }
+    }
+    return nullptr;
+}
+
+/**
+     * @brief Search for streets in this map.
+     * @param city where you want the street_list from
+     * @return A list of all streets in this map connected to provided city.
+     */
+QVector<Street*> Map::getStreetList(const City* city) const {
+    QVector<Street*> connectedStreets;
+    QString cityName = city->getName();
+    for(auto it = vectorStreets.begin(); it != vectorStreets.end(); ++it)
+    {
+        City* firstCity = (*it)->getFirstCity();
+        City* secondCity = (*it)->getSecondCity();
+        // Überprüfen ob einer der Städte der Straße die Straße aus dem Parameter ist
+        // Könnte man auch mit einer Operatorüberladung von == machen
+        if(!cityName.compare(firstCity->getName()) || !cityName.compare(secondCity->getName()))
+        {
+            connectedStreets.append(*it);
+        }
+    }
+    return connectedStreets;
+}
+
+/**
+     * @brief Look for opposite city.
+     * @param street
+     * @param city
+     * @return Opposite city of the street. If city has no connection to street returns nullptr.
+     */
+City* Map::getOppositeCity(const Street* street, const City* city) const {
+    if(!street->getFirstCity()->getName().compare(city->getName())) {
+        return street->getSecondCity();
+    } else if(!street->getSecondCity()->getName().compare(city->getName())) {
+        return street->getFirstCity();
+    }
+    // Die Straße enthält nicht die Stadt
+    return nullptr;
+}
+
+/**
+     * @brief Calculate the street length.
+     * @param street
+     * @return Length of the street
+     */
+double Map::getLength(const Street* street) const {
+    double xCoords = street->getSecondCity()->getX() - street->getFirstCity()->getX();
+    double yCoords = street->getSecondCity()->getY() - street->getFirstCity()->getY();
+
+    //    qDebug() << xCoords;
+    //    qDebug() << yCoords;
+    //    qDebug() << sqrt(xCoords * xCoords + yCoords * yCoords);
+    return sqrt(xCoords * xCoords + yCoords * yCoords);
+}

@@ -30,6 +30,35 @@ public:
      * @param scene QGraphicsScene auf der gezeichnet werden soll
      */
     void draw(QGraphicsScene& scene);
+
+    /**
+     * @brief Search for a city in this map by given name.
+     * @param name
+     * @return the city pointer, if city not found nullptr
+     */
+    City* findCity(const QString cityName) const;
+
+    /**
+     * @brief Search for streets in this map.
+     * @param city where you want the street_list from
+     * @return A list of all streets in this map connected to provided city.
+     */
+    QVector<Street*> getStreetList(const City* city) const;
+
+    /**
+     * @brief Look for opposite city.
+     * @param street
+     * @param city
+     * @return Opposite city of the street. If city has no connection to street returns nullptr.
+     */
+    City* getOppositeCity(const Street* street, const City* city) const;
+
+    /**
+     * @brief Calculate the street length.
+     * @param street
+     * @return Length of the street
+     */
+    double getLength(const Street* street) const;
 private:
     QVector<City*> vectorCities;
     QVector<Street*> vectorStreets;

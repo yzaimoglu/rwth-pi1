@@ -41,11 +41,13 @@ public:
     QLineEdit *lineEdit_teste_was;
     QPushButton *pushButton_teste_map_functions;
     QSpacerItem *verticalSpacer;
+    QPushButton *pushButton_add_city_dialog;
+    QPushButton *pushButton_mapio_map_fill;
     QPushButton *pushButton_teste_was;
     QGraphicsView *graphicsView;
     QPushButton *pushButton_teste_draw_city;
     QCheckBox *checkBox_test_buttons_ausblenden;
-    QPushButton *pushButton_add_city_dialog;
+    QPushButton *pushButton_teste_abstract_map;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuScene;
@@ -93,7 +95,17 @@ public:
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addItem(verticalSpacer, 7, 0, 1, 1);
+        gridLayout->addItem(verticalSpacer, 9, 0, 1, 1);
+
+        pushButton_add_city_dialog = new QPushButton(centralwidget);
+        pushButton_add_city_dialog->setObjectName("pushButton_add_city_dialog");
+
+        gridLayout->addWidget(pushButton_add_city_dialog, 7, 0, 1, 1);
+
+        pushButton_mapio_map_fill = new QPushButton(centralwidget);
+        pushButton_mapio_map_fill->setObjectName("pushButton_mapio_map_fill");
+
+        gridLayout->addWidget(pushButton_mapio_map_fill, 8, 0, 1, 1);
 
         pushButton_teste_was = new QPushButton(centralwidget);
         pushButton_teste_was->setObjectName("pushButton_teste_was");
@@ -103,7 +115,7 @@ public:
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName("graphicsView");
 
-        gridLayout->addWidget(graphicsView, 0, 2, 8, 1);
+        gridLayout->addWidget(graphicsView, 0, 2, 10, 1);
 
         pushButton_teste_draw_city = new QPushButton(centralwidget);
         pushButton_teste_draw_city->setObjectName("pushButton_teste_draw_city");
@@ -113,12 +125,12 @@ public:
         checkBox_test_buttons_ausblenden = new QCheckBox(centralwidget);
         checkBox_test_buttons_ausblenden->setObjectName("checkBox_test_buttons_ausblenden");
 
-        gridLayout->addWidget(checkBox_test_buttons_ausblenden, 5, 0, 1, 1);
+        gridLayout->addWidget(checkBox_test_buttons_ausblenden, 6, 0, 1, 1);
 
-        pushButton_add_city_dialog = new QPushButton(centralwidget);
-        pushButton_add_city_dialog->setObjectName("pushButton_add_city_dialog");
+        pushButton_teste_abstract_map = new QPushButton(centralwidget);
+        pushButton_teste_abstract_map->setObjectName("pushButton_teste_abstract_map");
 
-        gridLayout->addWidget(pushButton_add_city_dialog, 6, 0, 1, 1);
+        gridLayout->addWidget(pushButton_teste_abstract_map, 5, 0, 1, 1);
 
         gridLayout->setColumnStretch(2, 1);
         MainWindow->setCentralWidget(centralwidget);
@@ -169,13 +181,15 @@ public:
         lineEdit_teste_was->setText(QString());
         lineEdit_teste_was->setPlaceholderText(QCoreApplication::translate("MainWindow", "Ihre Eingabe", nullptr));
         pushButton_teste_map_functions->setText(QCoreApplication::translate("MainWindow", "Teste Map Funktionen", nullptr));
+        pushButton_add_city_dialog->setText(QCoreApplication::translate("MainWindow", "Stadt hinzuf\303\274gen", nullptr));
+        pushButton_mapio_map_fill->setText(QCoreApplication::translate("MainWindow", "Fill Map", nullptr));
 #if QT_CONFIG(tooltip)
         pushButton_teste_was->setToolTip(QCoreApplication::translate("MainWindow", "Testet, ob Ihre Eingabe eine Zahl oder ein Text ist", nullptr));
 #endif // QT_CONFIG(tooltip)
         pushButton_teste_was->setText(QCoreApplication::translate("MainWindow", "Teste was", nullptr));
         pushButton_teste_draw_city->setText(QCoreApplication::translate("MainWindow", "Teste Draw City", nullptr));
         checkBox_test_buttons_ausblenden->setText(QCoreApplication::translate("MainWindow", "Test Buttons ausblenden", nullptr));
-        pushButton_add_city_dialog->setText(QCoreApplication::translate("MainWindow", "Stadt hinzuf\303\274gen", nullptr));
+        pushButton_teste_abstract_map->setText(QCoreApplication::translate("MainWindow", "Teste Abstract Map", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuScene->setTitle(QCoreApplication::translate("MainWindow", "Scene", nullptr));
         menuInformation->setTitle(QCoreApplication::translate("MainWindow", "Info", nullptr));

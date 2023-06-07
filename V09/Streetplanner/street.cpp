@@ -16,10 +16,10 @@ void Street::draw(QGraphicsScene& scene) {
     qDebug() << QString("Die Straße zwischen den Städten %1 und %2 wurde eingezeichnet.").arg(this->firstCity->getName()).arg(this->secondCity->getName());
 }
 
-City* Street::getFirstCity() {
+City* Street::getFirstCity() const {
     return this->firstCity;
 }
 
-City* Street::getSecondCity() {
+City* Street::getSecondCity() const {
     return this->secondCity;
 }

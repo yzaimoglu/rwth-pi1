@@ -45,7 +45,7 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
+    <item row="9" column="0">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -58,6 +58,20 @@
       </property>
      </spacer>
     </item>
+    <item row="7" column="0">
+     <widget class="QPushButton" name="pushButton_add_city_dialog">
+      <property name="text">
+       <string>Stadt hinzufügen</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="pushButton_mapio_map_fill">
+      <property name="text">
+       <string>Fill Map</string>
+      </property>
+     </widget>
+    </item>
     <item row="2" column="0">
      <widget class="QPushButton" name="pushButton_teste_was">
       <property name="toolTip">
@@ -68,7 +82,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2" rowspan="8">
+    <item row="0" column="2" rowspan="10">
      <widget class="QGraphicsView" name="graphicsView"/>
     </item>
     <item row="3" column="0">
@@ -78,17 +92,17 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
+    <item row="6" column="0">
      <widget class="QCheckBox" name="checkBox_test_buttons_ausblenden">
       <property name="text">
        <string>Test Buttons ausblenden</string>
       </property>
      </widget>
     </item>
-    <item row="6" column="0">
-     <widget class="QPushButton" name="pushButton_add_city_dialog">
+    <item row="5" column="0">
+     <widget class="QPushButton" name="pushButton_teste_abstract_map">
       <property name="text">
-       <string>Stadt hinzufügen</string>
+       <string>Teste Abstract Map</string>
       </property>
      </widget>
     </item>

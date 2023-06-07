@@ -5,6 +5,7 @@
 #include <QGraphicsScene>
 
 #include "map.h"
+#include "mapio.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -35,9 +36,14 @@ private slots:
 
     void on_pushButton_add_city_dialog_clicked();
 
+    void on_pushButton_mapio_map_fill_clicked();
+
+    void on_pushButton_teste_abstract_map_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene scene;
     Map map;
+    MapIo* mapIo;
 };
 #endif // MAINWINDOW_H

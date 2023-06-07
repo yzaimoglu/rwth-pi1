@@ -58,6 +58,8 @@ SOURCES       = ../Streetplanner/abstractmap.cpp \
 		../Streetplanner/main.cpp \
 		../Streetplanner/mainwindow.cpp \
 		../Streetplanner/map.cpp \
+		../Streetplanner/mapio.cpp \
+		../Streetplanner/mapionrw.cpp \
 		../Streetplanner/street.cpp moc_addcitydialog.cpp \
 		moc_mainwindow.cpp
 OBJECTS       = abstractmap.o \
@@ -66,6 +68,8 @@ OBJECTS       = abstractmap.o \
 		main.o \
 		mainwindow.o \
 		map.o \
+		mapio.o \
+		mapionrw.o \
 		street.o \
 		moc_addcitydialog.o \
 		moc_mainwindow.o
@@ -230,12 +234,16 @@ DIST          = /Users/yagi/Qt/6.5.1/macos/mkspecs/features/spec_pre.prf \
 		../Streetplanner/city.h \
 		../Streetplanner/mainwindow.h \
 		../Streetplanner/map.h \
+		../Streetplanner/mapio.h \
+		../Streetplanner/mapionrw.h \
 		../Streetplanner/street.h ../Streetplanner/abstractmap.cpp \
 		../Streetplanner/addcitydialog.cpp \
 		../Streetplanner/city.cpp \
 		../Streetplanner/main.cpp \
 		../Streetplanner/mainwindow.cpp \
 		../Streetplanner/map.cpp \
+		../Streetplanner/mapio.cpp \
+		../Streetplanner/mapionrw.cpp \
 		../Streetplanner/street.cpp
 QMAKE_TARGET  = Streetplanner
 DESTDIR       = 
@@ -606,8 +614,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../Streetplanner/abstractmap.h ../Streetplanner/addcitydialog.h ../Streetplanner/city.h ../Streetplanner/mainwindow.h ../Streetplanner/map.h ../Streetplanner/street.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Streetplanner/abstractmap.cpp ../Streetplanner/addcitydialog.cpp ../Streetplanner/city.cpp ../Streetplanner/main.cpp ../Streetplanner/mainwindow.cpp ../Streetplanner/map.cpp ../Streetplanner/street.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Streetplanner/abstractmap.h ../Streetplanner/addcitydialog.h ../Streetplanner/city.h ../Streetplanner/mainwindow.h ../Streetplanner/map.h ../Streetplanner/mapio.h ../Streetplanner/mapionrw.h ../Streetplanner/street.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Streetplanner/abstractmap.cpp ../Streetplanner/addcitydialog.cpp ../Streetplanner/city.cpp ../Streetplanner/main.cpp ../Streetplanner/mainwindow.cpp ../Streetplanner/map.cpp ../Streetplanner/mapio.cpp ../Streetplanner/mapionrw.cpp ../Streetplanner/street.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Streetplanner/addcitydialog.ui ../Streetplanner/mainwindow.ui $(DISTDIR)/
 
 
@@ -643,6 +651,11 @@ compiler_moc_header_clean:
 moc_addcitydialog.cpp: ../Streetplanner/addcitydialog.h \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Streetplanner/city.h \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/QString \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/qstring.h \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
 		/Users/yagi/Qt/6.5.1/macos/libexec/moc
 	/Users/yagi/Qt/6.5.1/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/yagi/Qt/6.5.1/macos/mkspecs/macx-clang -I'/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/Streetplanner' -I/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers -I/Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Headers -I/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/yagi/Qt/6.5.1/macos/lib ../Streetplanner/addcitydialog.h -o moc_addcitydialog.cpp
 
@@ -657,6 +670,7 @@ moc_mainwindow.cpp: ../Streetplanner/mainwindow.h \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/qstring.h \
 		../Streetplanner/street.h \
 		../Streetplanner/abstractmap.h \
+		../Streetplanner/mapio.h \
 		/Users/yagi/Qt/6.5.1/macos/libexec/moc
 	/Users/yagi/Qt/6.5.1/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/yagi/Qt/6.5.1/macos/mkspecs/macx-clang -I'/Users/yagi/Documents/Education/Computer Engineering/Studium/02SEM/PRINFO1/Workspace/V09/Streetplanner' -I/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers -I/Users/yagi/Qt/6.5.1/macos/lib/QtGui.framework/Headers -I/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/yagi/Qt/6.5.1/macos/lib ../Streetplanner/mainwindow.h -o moc_mainwindow.cpp
 
@@ -699,6 +713,11 @@ abstractmap.o: ../Streetplanner/abstractmap.cpp ../Streetplanner/abstractmap.h \
 addcitydialog.o: ../Streetplanner/addcitydialog.cpp ../Streetplanner/addcitydialog.h \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Streetplanner/city.h \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/QString \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/qstring.h \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
 		ui_addcitydialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addcitydialog.o ../Streetplanner/addcitydialog.cpp
 
@@ -722,6 +741,7 @@ main.o: ../Streetplanner/main.cpp ../Streetplanner/mainwindow.h \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/qstring.h \
 		../Streetplanner/street.h \
 		../Streetplanner/abstractmap.h \
+		../Streetplanner/mapio.h \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/QApplication \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Streetplanner/main.cpp
@@ -737,6 +757,7 @@ mainwindow.o: ../Streetplanner/mainwindow.cpp ../Streetplanner/mainwindow.h \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/qstring.h \
 		../Streetplanner/street.h \
 		../Streetplanner/abstractmap.h \
+		../Streetplanner/mapio.h \
 		ui_mainwindow.h \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/QDebug \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/qdebug.h \
@@ -746,7 +767,8 @@ mainwindow.o: ../Streetplanner/mainwindow.cpp ../Streetplanner/mainwindow.h \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/qrandom.h \
 		../Streetplanner/addcitydialog.h \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/QDialog \
-		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/qdialog.h
+		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../Streetplanner/mapionrw.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Streetplanner/mainwindow.cpp
 
 map.o: ../Streetplanner/map.cpp ../Streetplanner/map.h \
@@ -760,6 +782,27 @@ map.o: ../Streetplanner/map.cpp ../Streetplanner/map.h \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/QDebug \
 		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o map.o ../Streetplanner/map.cpp
+
+mapio.o: ../Streetplanner/mapio.cpp ../Streetplanner/mapio.h \
+		../Streetplanner/abstractmap.h \
+		../Streetplanner/city.h \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/QString \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/qstring.h \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../Streetplanner/street.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mapio.o ../Streetplanner/mapio.cpp
+
+mapionrw.o: ../Streetplanner/mapionrw.cpp ../Streetplanner/mapionrw.h \
+		../Streetplanner/mapio.h \
+		../Streetplanner/abstractmap.h \
+		../Streetplanner/city.h \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/QString \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtCore.framework/Headers/qstring.h \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/yagi/Qt/6.5.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../Streetplanner/street.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mapionrw.o ../Streetplanner/mapionrw.cpp
 
 street.o: ../Streetplanner/street.cpp ../Streetplanner/street.h \
 		../Streetplanner/city.h \
