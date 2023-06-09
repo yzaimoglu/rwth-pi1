@@ -37,19 +37,20 @@ public:
     QAction *actionAbout;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QPushButton *pushButton_teste_draw_city;
-    QLineEdit *lineEdit_teste_was;
-    QLabel *label_eingabe;
-    QGraphicsView *graphicsView;
-    QPushButton *pushButton_teste_map_functions;
     QSpacerItem *verticalSpacer;
-    QPushButton *pushButton_teste_was;
-    QPushButton *pushButton_add_city_dialog;
-    QPushButton *pushButton_teste_abstract_map;
-    QPushButton *pushButton_mapio_map_fill;
-    QCheckBox *checkBox_test_buttons_ausblenden;
-    QPushButton *pushButton_teste_dijkstra_algorithm;
     QPushButton *pushButton_dijkstra_dialog;
+    QGraphicsView *graphicsView;
+    QPushButton *pushButton_add_city_dialog;
+    QPushButton *pushButton_teste_dijkstra_algorithm;
+    QPushButton *pushButton_teste_map_functions;
+    QPushButton *pushButton_teste_was;
+    QPushButton *pushButton_mapio_map_fill;
+    QLineEdit *lineEdit_teste_was;
+    QCheckBox *checkBox_test_buttons_ausblenden;
+    QLabel *label_eingabe;
+    QPushButton *pushButton_teste_draw_city;
+    QPushButton *pushButton_teste_abstract_map;
+    QPushButton *pushButton_mapio_map_fill_file;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuScene;
@@ -79,10 +80,44 @@ public:
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setVerticalSpacing(-1);
-        pushButton_teste_draw_city = new QPushButton(centralwidget);
-        pushButton_teste_draw_city->setObjectName("pushButton_teste_draw_city");
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addWidget(pushButton_teste_draw_city, 3, 0, 1, 1);
+        gridLayout->addItem(verticalSpacer, 13, 0, 1, 1);
+
+        pushButton_dijkstra_dialog = new QPushButton(centralwidget);
+        pushButton_dijkstra_dialog->setObjectName("pushButton_dijkstra_dialog");
+
+        gridLayout->addWidget(pushButton_dijkstra_dialog, 11, 0, 1, 1);
+
+        graphicsView = new QGraphicsView(centralwidget);
+        graphicsView->setObjectName("graphicsView");
+
+        gridLayout->addWidget(graphicsView, 0, 2, 14, 1);
+
+        pushButton_add_city_dialog = new QPushButton(centralwidget);
+        pushButton_add_city_dialog->setObjectName("pushButton_add_city_dialog");
+
+        gridLayout->addWidget(pushButton_add_city_dialog, 8, 0, 1, 1);
+
+        pushButton_teste_dijkstra_algorithm = new QPushButton(centralwidget);
+        pushButton_teste_dijkstra_algorithm->setObjectName("pushButton_teste_dijkstra_algorithm");
+
+        gridLayout->addWidget(pushButton_teste_dijkstra_algorithm, 6, 0, 1, 1);
+
+        pushButton_teste_map_functions = new QPushButton(centralwidget);
+        pushButton_teste_map_functions->setObjectName("pushButton_teste_map_functions");
+
+        gridLayout->addWidget(pushButton_teste_map_functions, 4, 0, 1, 1);
+
+        pushButton_teste_was = new QPushButton(centralwidget);
+        pushButton_teste_was->setObjectName("pushButton_teste_was");
+
+        gridLayout->addWidget(pushButton_teste_was, 2, 0, 1, 1);
+
+        pushButton_mapio_map_fill = new QPushButton(centralwidget);
+        pushButton_mapio_map_fill->setObjectName("pushButton_mapio_map_fill");
+
+        gridLayout->addWidget(pushButton_mapio_map_fill, 9, 0, 1, 1);
 
         lineEdit_teste_was = new QLineEdit(centralwidget);
         lineEdit_teste_was->setObjectName("lineEdit_teste_was");
@@ -90,59 +125,30 @@ public:
 
         gridLayout->addWidget(lineEdit_teste_was, 1, 0, 1, 1);
 
+        checkBox_test_buttons_ausblenden = new QCheckBox(centralwidget);
+        checkBox_test_buttons_ausblenden->setObjectName("checkBox_test_buttons_ausblenden");
+
+        gridLayout->addWidget(checkBox_test_buttons_ausblenden, 7, 0, 1, 1);
+
         label_eingabe = new QLabel(centralwidget);
         label_eingabe->setObjectName("label_eingabe");
 
         gridLayout->addWidget(label_eingabe, 0, 0, 1, 1);
 
-        graphicsView = new QGraphicsView(centralwidget);
-        graphicsView->setObjectName("graphicsView");
+        pushButton_teste_draw_city = new QPushButton(centralwidget);
+        pushButton_teste_draw_city->setObjectName("pushButton_teste_draw_city");
 
-        gridLayout->addWidget(graphicsView, 0, 2, 12, 1);
-
-        pushButton_teste_map_functions = new QPushButton(centralwidget);
-        pushButton_teste_map_functions->setObjectName("pushButton_teste_map_functions");
-
-        gridLayout->addWidget(pushButton_teste_map_functions, 4, 0, 1, 1);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer, 11, 0, 1, 1);
-
-        pushButton_teste_was = new QPushButton(centralwidget);
-        pushButton_teste_was->setObjectName("pushButton_teste_was");
-
-        gridLayout->addWidget(pushButton_teste_was, 2, 0, 1, 1);
-
-        pushButton_add_city_dialog = new QPushButton(centralwidget);
-        pushButton_add_city_dialog->setObjectName("pushButton_add_city_dialog");
-
-        gridLayout->addWidget(pushButton_add_city_dialog, 8, 0, 1, 1);
+        gridLayout->addWidget(pushButton_teste_draw_city, 3, 0, 1, 1);
 
         pushButton_teste_abstract_map = new QPushButton(centralwidget);
         pushButton_teste_abstract_map->setObjectName("pushButton_teste_abstract_map");
 
         gridLayout->addWidget(pushButton_teste_abstract_map, 5, 0, 1, 1);
 
-        pushButton_mapio_map_fill = new QPushButton(centralwidget);
-        pushButton_mapio_map_fill->setObjectName("pushButton_mapio_map_fill");
+        pushButton_mapio_map_fill_file = new QPushButton(centralwidget);
+        pushButton_mapio_map_fill_file->setObjectName("pushButton_mapio_map_fill_file");
 
-        gridLayout->addWidget(pushButton_mapio_map_fill, 9, 0, 1, 1);
-
-        checkBox_test_buttons_ausblenden = new QCheckBox(centralwidget);
-        checkBox_test_buttons_ausblenden->setObjectName("checkBox_test_buttons_ausblenden");
-
-        gridLayout->addWidget(checkBox_test_buttons_ausblenden, 7, 0, 1, 1);
-
-        pushButton_teste_dijkstra_algorithm = new QPushButton(centralwidget);
-        pushButton_teste_dijkstra_algorithm->setObjectName("pushButton_teste_dijkstra_algorithm");
-
-        gridLayout->addWidget(pushButton_teste_dijkstra_algorithm, 6, 0, 1, 1);
-
-        pushButton_dijkstra_dialog = new QPushButton(centralwidget);
-        pushButton_dijkstra_dialog->setObjectName("pushButton_dijkstra_dialog");
-
-        gridLayout->addWidget(pushButton_dijkstra_dialog, 10, 0, 1, 1);
+        gridLayout->addWidget(pushButton_mapio_map_fill_file, 10, 0, 1, 1);
 
         gridLayout->setColumnStretch(2, 1);
         MainWindow->setCentralWidget(centralwidget);
@@ -189,21 +195,22 @@ public:
         actionClear_Scene->setShortcut(QCoreApplication::translate("MainWindow", "Alt+S", nullptr));
 #endif // QT_CONFIG(shortcut)
         actionAbout->setText(QCoreApplication::translate("MainWindow", "Streetplanner", nullptr));
-        pushButton_teste_draw_city->setText(QCoreApplication::translate("MainWindow", "Teste Draw City", nullptr));
-        lineEdit_teste_was->setText(QString());
-        lineEdit_teste_was->setPlaceholderText(QCoreApplication::translate("MainWindow", "Ihre Eingabe", nullptr));
-        label_eingabe->setText(QCoreApplication::translate("MainWindow", "Ihre Eingabe", nullptr));
+        pushButton_dijkstra_dialog->setText(QCoreApplication::translate("MainWindow", "Suche den k\303\274rzesten Weg", nullptr));
+        pushButton_add_city_dialog->setText(QCoreApplication::translate("MainWindow", "Stadt hinzuf\303\274gen", nullptr));
+        pushButton_teste_dijkstra_algorithm->setText(QCoreApplication::translate("MainWindow", "Teste Dijkstra's Algorithmus", nullptr));
         pushButton_teste_map_functions->setText(QCoreApplication::translate("MainWindow", "Teste Map Funktionen", nullptr));
 #if QT_CONFIG(tooltip)
         pushButton_teste_was->setToolTip(QCoreApplication::translate("MainWindow", "Testet, ob Ihre Eingabe eine Zahl oder ein Text ist", nullptr));
 #endif // QT_CONFIG(tooltip)
         pushButton_teste_was->setText(QCoreApplication::translate("MainWindow", "Teste was", nullptr));
-        pushButton_add_city_dialog->setText(QCoreApplication::translate("MainWindow", "Stadt hinzuf\303\274gen", nullptr));
-        pushButton_teste_abstract_map->setText(QCoreApplication::translate("MainWindow", "Teste Abstract Map", nullptr));
-        pushButton_mapio_map_fill->setText(QCoreApplication::translate("MainWindow", "Fill Map", nullptr));
+        pushButton_mapio_map_fill->setText(QCoreApplication::translate("MainWindow", "Fill Map - Standard", nullptr));
+        lineEdit_teste_was->setText(QString());
+        lineEdit_teste_was->setPlaceholderText(QCoreApplication::translate("MainWindow", "Ihre Eingabe", nullptr));
         checkBox_test_buttons_ausblenden->setText(QCoreApplication::translate("MainWindow", "Test Buttons ausblenden", nullptr));
-        pushButton_teste_dijkstra_algorithm->setText(QCoreApplication::translate("MainWindow", "Teste Dijkstra's Algorithmus", nullptr));
-        pushButton_dijkstra_dialog->setText(QCoreApplication::translate("MainWindow", "Suche den k\303\274rzesten Weg", nullptr));
+        label_eingabe->setText(QCoreApplication::translate("MainWindow", "Ihre Eingabe", nullptr));
+        pushButton_teste_draw_city->setText(QCoreApplication::translate("MainWindow", "Teste Draw City", nullptr));
+        pushButton_teste_abstract_map->setText(QCoreApplication::translate("MainWindow", "Teste Abstract Map", nullptr));
+        pushButton_mapio_map_fill_file->setText(QCoreApplication::translate("MainWindow", "Fill Map - Datei", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuScene->setTitle(QCoreApplication::translate("MainWindow", "Scene", nullptr));
         menuInformation->setTitle(QCoreApplication::translate("MainWindow", "Info", nullptr));

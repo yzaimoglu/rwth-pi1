@@ -44,6 +44,8 @@ private slots:
 
     void on_pushButton_dijkstra_dialog_clicked();
 
+    void on_pushButton_mapio_map_fill_file_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene scene;

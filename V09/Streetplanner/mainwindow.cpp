@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QRandomGenerator>
+#include <QFileDialog>
 
 #include "city.h"
 #include "street.h"
@@ -11,6 +12,7 @@
 #include "mapionrw.h"
 #include "dijkstra.h"
 #include "dijkstradialog.h"
+#include "mapiofileinput.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -303,4 +305,34 @@ void MainWindow::on_pushButton_dijkstra_dialog_clicked()
         street->drawRed(scene);
     }
 }
+
+
+void MainWindow::on_pushButton_mapio_map_fill_file_clicked()
+{
+    QString cityFileName = QFileDialog::getOpenFileName(this,
+                                                    ("Stadtdatei auswählen"),
+                                                    "/Users/yagi/Downloads/Vorlagen/Vorlagen/Versuch09/txtFiles",
+                                                    ("(*.txt)"));
+    QString streetFileName = QFileDialog::getOpenFileName(this,
+                                                        ("Straßendatei auswählen"),
+                                                        "/Users/yagi/Downloads/Vorlagen/Vorlagen/Versuch09/txtFiles",
+                                                        ("(*.txt)"));
+    if(!cityFileName.isNull() && !streetFileName.isNull()) {
+        scene.clear();
+        mapIo = new MapIoFileinput(cityFileName, streetFileName);
+        mapIo->fillMap(map);
+        map.draw(scene);
+
+        QMessageBox messageBox;
+        messageBox.setText(QString("Die Städte und die Straßen wurden der Karte hinzugefügt."));
+        qDebug() << QString("Die Städte und die Straßen wurden der Karte hinzugefügt.");
+        messageBox.exec();
+    } else {
+        QMessageBox messageBox;
+        messageBox.setText(QString("Bitte wähle eine richtige Stadt und Straßendatei aus."));
+        qDebug() << QString("Bitte wähle eine richtige Stadt und Straßendatei aus.");
+        messageBox.exec();
+    }
+}
+
 

@@ -18,6 +18,7 @@ SOURCES += \
     mainwindow.cpp \
     map.cpp \
     mapio.cpp \
+    mapiofileinput.cpp \
     mapionrw.cpp \
     street.cpp
 
@@ -30,6 +31,7 @@ HEADERS += \
     mainwindow.h \
     map.h \
     mapio.h \
+    mapiofileinput.h \
     mapionrw.h \
     street.h
 
