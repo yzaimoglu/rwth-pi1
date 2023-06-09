@@ -46,6 +46,8 @@ private slots:
 
     void on_pushButton_mapio_map_fill_file_clicked();
 
+    void on_pushButton_add_street_dialog_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene scene;

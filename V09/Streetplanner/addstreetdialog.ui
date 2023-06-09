@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddStreetDialog</class>
+ <widget class="QDialog" name="AddStreetDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Straße hinzufügen</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QComboBox" name="comboBox_firstCity"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QComboBox" name="comboBox_secondCity"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="pushButton_cancel">
+     <property name="text">
+      <string>Abbrechen</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="pushButton_ok">
+     <property name="text">
+      <string>Ok</string>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

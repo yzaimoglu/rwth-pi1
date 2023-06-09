@@ -9,6 +9,7 @@
 #include "city.h"
 #include "street.h"
 #include "addcitydialog.h"
+#include "addstreetdialog.h"
 #include "mapionrw.h"
 #include "dijkstra.h"
 #include "dijkstradialog.h"
@@ -335,4 +336,13 @@ void MainWindow::on_pushButton_mapio_map_fill_file_clicked()
     }
 }
 
+
+
+void MainWindow::on_pushButton_add_street_dialog_clicked()
+{
+    AddStreetDialog addStreetDialog = AddStreetDialog(this, &map);
+    addStreetDialog.exec();
+    scene.clear();
+    map.draw(scene);
+}
 

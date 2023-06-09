@@ -39,6 +39,7 @@ public:
     QGridLayout *gridLayout;
     QSpacerItem *verticalSpacer;
     QPushButton *pushButton_dijkstra_dialog;
+    QPushButton *pushButton_mapio_map_fill_file;
     QGraphicsView *graphicsView;
     QPushButton *pushButton_add_city_dialog;
     QPushButton *pushButton_teste_dijkstra_algorithm;
@@ -50,7 +51,7 @@ public:
     QLabel *label_eingabe;
     QPushButton *pushButton_teste_draw_city;
     QPushButton *pushButton_teste_abstract_map;
-    QPushButton *pushButton_mapio_map_fill_file;
+    QPushButton *pushButton_add_street_dialog;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuScene;
@@ -82,17 +83,22 @@ public:
         gridLayout->setVerticalSpacing(-1);
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addItem(verticalSpacer, 13, 0, 1, 1);
+        gridLayout->addItem(verticalSpacer, 14, 0, 1, 1);
 
         pushButton_dijkstra_dialog = new QPushButton(centralwidget);
         pushButton_dijkstra_dialog->setObjectName("pushButton_dijkstra_dialog");
 
-        gridLayout->addWidget(pushButton_dijkstra_dialog, 11, 0, 1, 1);
+        gridLayout->addWidget(pushButton_dijkstra_dialog, 12, 0, 1, 1);
+
+        pushButton_mapio_map_fill_file = new QPushButton(centralwidget);
+        pushButton_mapio_map_fill_file->setObjectName("pushButton_mapio_map_fill_file");
+
+        gridLayout->addWidget(pushButton_mapio_map_fill_file, 11, 0, 1, 1);
 
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName("graphicsView");
 
-        gridLayout->addWidget(graphicsView, 0, 2, 14, 1);
+        gridLayout->addWidget(graphicsView, 0, 2, 15, 1);
 
         pushButton_add_city_dialog = new QPushButton(centralwidget);
         pushButton_add_city_dialog->setObjectName("pushButton_add_city_dialog");
@@ -117,7 +123,7 @@ public:
         pushButton_mapio_map_fill = new QPushButton(centralwidget);
         pushButton_mapio_map_fill->setObjectName("pushButton_mapio_map_fill");
 
-        gridLayout->addWidget(pushButton_mapio_map_fill, 9, 0, 1, 1);
+        gridLayout->addWidget(pushButton_mapio_map_fill, 10, 0, 1, 1);
 
         lineEdit_teste_was = new QLineEdit(centralwidget);
         lineEdit_teste_was->setObjectName("lineEdit_teste_was");
@@ -145,10 +151,10 @@ public:
 
         gridLayout->addWidget(pushButton_teste_abstract_map, 5, 0, 1, 1);
 
-        pushButton_mapio_map_fill_file = new QPushButton(centralwidget);
-        pushButton_mapio_map_fill_file->setObjectName("pushButton_mapio_map_fill_file");
+        pushButton_add_street_dialog = new QPushButton(centralwidget);
+        pushButton_add_street_dialog->setObjectName("pushButton_add_street_dialog");
 
-        gridLayout->addWidget(pushButton_mapio_map_fill_file, 10, 0, 1, 1);
+        gridLayout->addWidget(pushButton_add_street_dialog, 9, 0, 1, 1);
 
         gridLayout->setColumnStretch(2, 1);
         MainWindow->setCentralWidget(centralwidget);
@@ -196,6 +202,7 @@ public:
 #endif // QT_CONFIG(shortcut)
         actionAbout->setText(QCoreApplication::translate("MainWindow", "Streetplanner", nullptr));
         pushButton_dijkstra_dialog->setText(QCoreApplication::translate("MainWindow", "Suche den k\303\274rzesten Weg", nullptr));
+        pushButton_mapio_map_fill_file->setText(QCoreApplication::translate("MainWindow", "Fill Map - Datei", nullptr));
         pushButton_add_city_dialog->setText(QCoreApplication::translate("MainWindow", "Stadt hinzuf\303\274gen", nullptr));
         pushButton_teste_dijkstra_algorithm->setText(QCoreApplication::translate("MainWindow", "Teste Dijkstra's Algorithmus", nullptr));
         pushButton_teste_map_functions->setText(QCoreApplication::translate("MainWindow", "Teste Map Funktionen", nullptr));
@@ -210,7 +217,7 @@ public:
         label_eingabe->setText(QCoreApplication::translate("MainWindow", "Ihre Eingabe", nullptr));
         pushButton_teste_draw_city->setText(QCoreApplication::translate("MainWindow", "Teste Draw City", nullptr));
         pushButton_teste_abstract_map->setText(QCoreApplication::translate("MainWindow", "Teste Abstract Map", nullptr));
-        pushButton_mapio_map_fill_file->setText(QCoreApplication::translate("MainWindow", "Fill Map - Datei", nullptr));
+        pushButton_add_street_dialog->setText(QCoreApplication::translate("MainWindow", "Stra\303\237e hinzuf\303\274gen", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuScene->setTitle(QCoreApplication::translate("MainWindow", "Scene", nullptr));
         menuInformation->setTitle(QCoreApplication::translate("MainWindow", "Info", nullptr));

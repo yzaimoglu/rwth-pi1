@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     abstractmap.cpp \
     addcitydialog.cpp \
+    addstreetdialog.cpp \
     city.cpp \
     dijkstra.cpp \
     dijkstradialog.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 HEADERS += \
     abstractmap.h \
     addcitydialog.h \
+    addstreetdialog.h \
     city.h \
     dijkstra.h \
     dijkstradialog.h \
@@ -37,6 +39,7 @@ HEADERS += \
 
 FORMS += \
     addcitydialog.ui \
+    addstreetdialog.ui \
     dijkstradialog.ui \
     mainwindow.ui
 
