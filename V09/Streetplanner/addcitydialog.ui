@@ -51,7 +51,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
+   <item row="5" column="0">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -64,14 +64,14 @@
      </property>
     </spacer>
    </item>
-   <item row="5" column="0">
+   <item row="6" column="0">
     <widget class="QPushButton" name="pushButton_cancel">
      <property name="text">
       <string>Abbrechen</string>
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
+   <item row="7" column="0">
     <widget class="QPushButton" name="pushButton_create">
      <property name="text">
       <string>Erstellen</string>
@@ -80,6 +80,9 @@
       <bool>true</bool>
      </property>
     </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QComboBox" name="comboBox_cityType"/>
    </item>
   </layout>
  </widget>

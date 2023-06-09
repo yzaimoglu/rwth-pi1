@@ -7,11 +7,11 @@ class Street
 {
 public:
     Street(City* firstCity, City* secondCity);
-    void draw(QGraphicsScene& scene);
-    void drawRed(QGraphicsScene& scene);
+    virtual void draw(QGraphicsScene& scene);
+    virtual void drawRed(QGraphicsScene& scene);
     City* getFirstCity() const;
     City* getSecondCity() const;
-private:
+protected:
     City* firstCity;
     City* secondCity;
 };

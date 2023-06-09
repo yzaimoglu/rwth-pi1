@@ -16,7 +16,7 @@ class AddCityDialog : public QDialog
 public:
     explicit AddCityDialog(QWidget *parent = nullptr, Map* map = nullptr, QString cityNameUI = "", QString xCoordUI = "", QString yCoordUI = "");
     ~AddCityDialog();
-    void createCity(QString cityName, int xCoordinate, int yCoordinate);
+    void createCity(QString cityName, int xCoordinate, int yCoordinate, int cityType);
 
 private slots:
     void on_pushButton_create_clicked();

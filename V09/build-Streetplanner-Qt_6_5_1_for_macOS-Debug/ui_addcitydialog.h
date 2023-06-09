@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QLabel>
@@ -31,6 +32,7 @@ public:
     QSpacerItem *verticalSpacer;
     QPushButton *pushButton_cancel;
     QPushButton *pushButton_create;
+    QComboBox *comboBox_cityType;
 
     void setupUi(QDialog *AddCityDialog)
     {
@@ -61,17 +63,22 @@ public:
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        formLayout->setItem(4, QFormLayout::LabelRole, verticalSpacer);
+        formLayout->setItem(5, QFormLayout::LabelRole, verticalSpacer);
 
         pushButton_cancel = new QPushButton(AddCityDialog);
         pushButton_cancel->setObjectName("pushButton_cancel");
 
-        formLayout->setWidget(5, QFormLayout::LabelRole, pushButton_cancel);
+        formLayout->setWidget(6, QFormLayout::LabelRole, pushButton_cancel);
 
         pushButton_create = new QPushButton(AddCityDialog);
         pushButton_create->setObjectName("pushButton_create");
 
-        formLayout->setWidget(6, QFormLayout::LabelRole, pushButton_create);
+        formLayout->setWidget(7, QFormLayout::LabelRole, pushButton_create);
+
+        comboBox_cityType = new QComboBox(AddCityDialog);
+        comboBox_cityType->setObjectName("comboBox_cityType");
+
+        formLayout->setWidget(4, QFormLayout::LabelRole, comboBox_cityType);
 
 
         retranslateUi(AddCityDialog);

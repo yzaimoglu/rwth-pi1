@@ -1,5 +1,7 @@
 #include "addcitydialog.h"
 #include "ui_addcitydialog.h"
+#include "smallcity.h"
+#include "bigcity.h"
 
 #include <QMessageBox>
 
@@ -21,6 +23,12 @@ AddCityDialog::AddCityDialog(QWidget *parent, Map* map, QString cityNameUI, QStr
         return;
     }
 
+    QList<QString> cityTypes;
+    cityTypes.append("Stadt");
+    cityTypes.append("Kleinstadt");
+    cityTypes.append("Großstadt");
+    ui->comboBox_cityType->addItems(cityTypes);
+
     ui->lineEdit_city_name->setText(cityNameUI);
     ui->lineEdit_x_coord->setText(xCoordUI);
     ui->lineEdit_y_coord->setText(yCoordUI);
@@ -31,9 +39,21 @@ AddCityDialog::~AddCityDialog()
     delete ui;
 }
 
-void AddCityDialog::createCity(QString cityName, int xCoordinate, int yCoordinate) {
-    City* createdCity = new City(cityName, xCoordinate, yCoordinate);
-    qDebug() << QString("Die Stadt %1 mit den Koordinaten x: %2, y: %3 wurde erstellt.").arg(createdCity->getName()).arg(createdCity->getX()).arg(createdCity->getY());
+void AddCityDialog::createCity(QString cityName, int xCoordinate, int yCoordinate, int cityType) {
+    City* createdCity;
+    switch(cityType) {
+    case 1:
+        createdCity = new SmallCity(cityName, xCoordinate, yCoordinate);
+        break;
+    case 2:
+        createdCity = new BigCity(cityName, xCoordinate, yCoordinate);
+        break;
+    default:
+        createdCity = new City(cityName, xCoordinate, yCoordinate);
+        break;
+    }
+
+    qDebug() << QString("Die %1 %2 mit den Koordinaten x: %3, y: %4 wurde erstellt.").arg(ui->comboBox_cityType->currentText()).arg(createdCity->getName()).arg(createdCity->getX()).arg(createdCity->getY());
     (*map).addCity(createdCity);
 }
 
@@ -62,7 +82,7 @@ void AddCityDialog::on_pushButton_create_clicked()
         messageBox.exec();
         return;
     }
-    createCity(cityName, xCoordinate, yCoordinate);
+    createCity(cityName, xCoordinate, yCoordinate, ui->comboBox_cityType->currentIndex());
     close();
 }
 

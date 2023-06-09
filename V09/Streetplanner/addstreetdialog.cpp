@@ -1,8 +1,11 @@
 #include "addstreetdialog.h"
 #include "ui_addstreetdialog.h"
 #include "street.h"
+#include "stateroad.h"
+#include "motorway.h"
 
 #include <QMessageBox>
+#include <QStringList>
 
 AddStreetDialog::AddStreetDialog(QWidget *parent, Map* map) :
     QDialog(parent),
@@ -15,6 +18,12 @@ AddStreetDialog::AddStreetDialog(QWidget *parent, Map* map) :
         qDebug() << "Die Map darf kein nullptr sein.";
         this->close();
     }
+
+    QList<QString> streetTypes;
+    streetTypes.append("Straße");
+    streetTypes.append("Landstraße");
+    streetTypes.append("Autobahn");
+    ui->comboBox_streetType->addItems(streetTypes);
 
     foreach(City* city, map->getCityList()) {
         qDebug() << city->getName();
@@ -57,12 +66,26 @@ void AddStreetDialog::on_pushButton_ok_clicked()
         }
     }
 
-    Street* streetToBeAdded = new Street(firstCity, secondCity);
+    Street* streetToBeAdded;
+    switch (ui->comboBox_streetType->currentIndex()) {
+    // 0 = Straße, 1 = Landstraße, 2 = Autobahn
+    case 1:
+        streetToBeAdded = new StateRoad(firstCity, secondCity);
+        break;
+    case 2:
+        streetToBeAdded = new Motorway(firstCity, secondCity);
+        break;
+    default:
+        streetToBeAdded = new Street(firstCity, secondCity);
+        break;
+    }
+
+
     map->addStreet(streetToBeAdded);
     close();
 
     QMessageBox messageBox;
-    messageBox.setText(QString("Es wurde eine Straße zwischen den Städten %1 und %2 erstellt.").arg(firstCity->getName()).arg(secondCity->getName()));
-    qDebug() << QString("Es wurde eine Straße zwischen den Städten %1 und %2 erstellt.").arg(firstCity->getName()).arg(secondCity->getName());
+    messageBox.setText(QString("Es wurde eine %1 zwischen den Städten %2 und %3 erstellt.").arg(ui->comboBox_streetType->currentText()).arg(firstCity->getName()).arg(secondCity->getName()));
+    qDebug() << QString("Es wurde eine %1 zwischen den Städten %2 und %3 erstellt.").arg(ui->comboBox_streetType->currentText()).arg(firstCity->getName()).arg(secondCity->getName());
 }
 

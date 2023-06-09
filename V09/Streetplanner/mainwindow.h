@@ -48,6 +48,8 @@ private slots:
 
     void on_pushButton_add_street_dialog_clicked();
 
+    void on_pushButton_empty_scene_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene scene;

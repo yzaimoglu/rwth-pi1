@@ -30,6 +30,7 @@ public:
     QPushButton *pushButton_cancel;
     QPushButton *pushButton_ok;
     QSpacerItem *verticalSpacer;
+    QComboBox *comboBox_streetType;
 
     void setupUi(QDialog *AddStreetDialog)
     {
@@ -56,16 +57,21 @@ public:
         pushButton_cancel = new QPushButton(AddStreetDialog);
         pushButton_cancel->setObjectName("pushButton_cancel");
 
-        formLayout->setWidget(3, QFormLayout::LabelRole, pushButton_cancel);
+        formLayout->setWidget(4, QFormLayout::LabelRole, pushButton_cancel);
 
         pushButton_ok = new QPushButton(AddStreetDialog);
         pushButton_ok->setObjectName("pushButton_ok");
 
-        formLayout->setWidget(4, QFormLayout::LabelRole, pushButton_ok);
+        formLayout->setWidget(5, QFormLayout::LabelRole, pushButton_ok);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        formLayout->setItem(5, QFormLayout::LabelRole, verticalSpacer);
+        formLayout->setItem(6, QFormLayout::LabelRole, verticalSpacer);
+
+        comboBox_streetType = new QComboBox(AddStreetDialog);
+        comboBox_streetType->setObjectName("comboBox_streetType");
+
+        formLayout->setWidget(3, QFormLayout::LabelRole, comboBox_streetType);
 
 
         retranslateUi(AddStreetDialog);

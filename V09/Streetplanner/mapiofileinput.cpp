@@ -12,13 +12,13 @@
 #include <QIODevice>
 #include <QTextStream>
 
-//#define CITY_EXTENSION
-//#define STREET_EXTENSION
+#define CITY_EXTENSION
+#define STREET_EXTENSION
 
 
 #ifdef CITY_EXTENSION
-    #include "bigtown.h"
-    #include "smalltown.h"
+    #include "bigcity.h"
+    #include "smallcity.h"
 #endif
 #ifdef STREET_EXTENSION
     #include "motorway.h"
@@ -90,13 +90,13 @@ void MapIoFileinput::fillMap(AbstractMap &map)
         City *city;
 
 #ifdef CITY_EXTENSION
-        if (cityTyp.compare("BigTown") == 0)
+        if (cityTyp.compare("BigCity") == 0)
         {
-            city = new BigTown(name, xPosition, yPosition);
+            city = new BigCity(name, xPosition, yPosition);
         }
         else
         {
-            city = new SmallTown(name, xPosition, yPosition);
+            city = new SmallCity(name, xPosition, yPosition);
         }
 #else
         city = new City(name, xPosition, yPosition);
@@ -135,7 +135,7 @@ void MapIoFileinput::fillMap(AbstractMap &map)
         }
         else
         {
-            street = new Stateroad(city1, city2);
+            street = new StateRoad(city1, city2);
         }
 #else
         street = new Street(city1, city2);

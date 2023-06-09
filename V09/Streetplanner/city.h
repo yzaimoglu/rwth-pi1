@@ -8,14 +8,14 @@ class City
 {
 public:
     City(QString name, int x, int y);
-    void draw(QGraphicsScene& scene);
+    virtual void draw(QGraphicsScene& scene);
     QString getName() const;
     int getX();
     int getY();
     bool operator==(const City& city) const;
     bool isSame(QString cityName);
 
-private:
+protected:
     QString name;
     int x;
     int y;

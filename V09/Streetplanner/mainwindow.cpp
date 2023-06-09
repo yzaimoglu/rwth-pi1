@@ -318,6 +318,7 @@ void MainWindow::on_pushButton_mapio_map_fill_file_clicked()
                                                         ("Straßendatei auswählen"),
                                                         "/Users/yagi/Downloads/Vorlagen/Vorlagen/Versuch09/txtFiles",
                                                         ("(*.txt)"));
+
     if(!cityFileName.isNull() && !streetFileName.isNull()) {
         scene.clear();
         mapIo = new MapIoFileinput(cityFileName, streetFileName);
@@ -336,13 +337,18 @@ void MainWindow::on_pushButton_mapio_map_fill_file_clicked()
     }
 }
 
-
-
 void MainWindow::on_pushButton_add_street_dialog_clicked()
 {
     AddStreetDialog addStreetDialog = AddStreetDialog(this, &map);
     addStreetDialog.exec();
     scene.clear();
     map.draw(scene);
+}
+
+
+void MainWindow::on_pushButton_empty_scene_clicked()
+{
+    map.clear();
+    scene.clear();
 }
 

@@ -65,6 +65,11 @@ public:
      * @return Liste der Städte als Zeiger
      */
     QVector<City*> getCityList();
+
+    /**
+     * @brief Leert die Vektoren
+     */
+    void clear();
 private:
     QVector<City*> vectorCities;
     QVector<Street*> vectorStreets;

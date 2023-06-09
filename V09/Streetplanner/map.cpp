@@ -106,3 +106,8 @@ double Map::getLength(const Street* street) const {
 QVector<City*> Map::getCityList() {
     return vectorCities;
 }
+
+void Map::clear() {
+    vectorCities.clear();
+    vectorStreets.clear();
+}

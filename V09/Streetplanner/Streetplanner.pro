@@ -12,6 +12,7 @@ SOURCES += \
     abstractmap.cpp \
     addcitydialog.cpp \
     addstreetdialog.cpp \
+    bigcity.cpp \
     city.cpp \
     dijkstra.cpp \
     dijkstradialog.cpp \
@@ -21,12 +22,16 @@ SOURCES += \
     mapio.cpp \
     mapiofileinput.cpp \
     mapionrw.cpp \
+    motorway.cpp \
+    smallcity.cpp \
+    stateroad.cpp \
     street.cpp
 
 HEADERS += \
     abstractmap.h \
     addcitydialog.h \
     addstreetdialog.h \
+    bigcity.h \
     city.h \
     dijkstra.h \
     dijkstradialog.h \
@@ -35,6 +40,9 @@ HEADERS += \
     mapio.h \
     mapiofileinput.h \
     mapionrw.h \
+    motorway.h \
+    smallcity.h \
+    stateroad.h \
     street.h
 
 FORMS += \
