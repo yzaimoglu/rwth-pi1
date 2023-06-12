@@ -226,14 +226,31 @@ int main()
     return 0;
 }
 
+/**
+ * @brief Fügt einen Studenten in den Vektor an erster Stelle ein
+ * @param studentVector der Studentenvektor
+ * @param student einzufügender Student
+ * @return void
+ */
 void student_push_front(std::vector<Student> studentVector, Student student) {
     studentVector.insert(studentVector.begin(), student);
 }
 
+/**
+ * @brief Löscht den ersten Studenten aus dem Vektor
+ * @param studentVector der Studentenvektor
+ * @return void
+ */
 void student_pop_front(std::vector<Student> studentVector) {
     studentVector.erase(studentVector.begin());
 }
 
+/**
+ * @brief Erhält einen Studenten aus dem Vektor anhand der Matrikelnummer
+ * @param studentVector der Studentenvektor
+ * @param matrikelnummer Matrikelnummer des Studenten
+ * @return Student
+ */
 Student student_get(std::vector<Student> studentVector, int matrikelnummer) {
     for(auto it = studentVector.begin(); it != studentVector.end(); ++it) {
         if(it->getMatNr() == matrikelnummer) {
@@ -243,6 +260,12 @@ Student student_get(std::vector<Student> studentVector, int matrikelnummer) {
     return Student(0, "", "", "");
 }
 
+/**
+ * @brief Löscht einen Studenten aus dem Vektor anhand der Matrikelnummer
+ * @param studentVector der Studentenvektor
+ * @param matrikelnummer Matrikelnummer des zu löschenden Studenten
+ * @return void
+ */
 void student_delete(std::vector<Student> studentVector, int matrikelnummer) {
     for(auto it = studentVector.begin(); it != studentVector.end(); ++it) {
         if(it->getMatNr() == matrikelnummer) {
@@ -251,18 +274,33 @@ void student_delete(std::vector<Student> studentVector, int matrikelnummer) {
     };
 }
 
+/**
+ * @brief Gibt den Studentenvektor in richtiger Reihenfolge aus
+ * @param studentVector der auszugebende Vektor
+ * @return void
+ */
 void student_print(std::vector<Student> studentVector) {
     for(auto it = studentVector.begin(); it != studentVector.end(); ++it) {
         it->ausgabe();
     };
 }
 
+/**
+ * @brief Gibt den Studentenvektor in verkehrter Reihenfolge aus
+ * @param studentVector der auszugebende Vektor
+ * @return void
+ */
 void student_print_reverse(std::vector<Student> studentVector) {
     for(auto it = studentVector.rbegin(); it != studentVector.rend(); ++it) {
         it->ausgabe();
     };
 }
 
+/**
+ * @brief Liest den Studentenvektor aus einer Datei
+ * @param dateiName der Name der zu einlesenden Datei
+ * @return studentVector
+ */
 std::vector<Student> student_read_file(std::string dateiName) {
     std::vector<Student> studentenListe;
 
@@ -292,6 +330,12 @@ std::vector<Student> student_read_file(std::string dateiName) {
     return studentenListe;
 }
 
+/**
+ * @brief Speichert den Studentenvektor in eine Datei mit dem Namen ein
+ * @param studentVector der Studentenvektor
+ * @param dateiName der Name der zu speichernden Datei
+ * @return void
+ */
 void student_write_file(std::vector<Student> studentVector, std::string dateiName) {
 	if(studentVector.empty()) {
 		std::cout << "Die Liste ist leer." << std::endl;

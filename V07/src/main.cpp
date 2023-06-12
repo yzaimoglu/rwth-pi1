@@ -228,9 +228,9 @@ int main()
 }
 
 /*
- * @brief Liest die Daten aus einer Datei ein
- * @param dateiName Name der Datei
- * @return Vector mit den Studenten
+ * @brief Fügt einen Studenten an den Anfang des Vektors
+ * @param studentVector der Studentenvektor
+ * @return Student
  */
 void student_push_front(std::vector<Student> studentVector, Student student) {
     studentVector.insert(studentVector.begin(), student);

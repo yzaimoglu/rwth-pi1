@@ -13,8 +13,9 @@
 //Instanzierung des tage-Arrays
 const int Datum::tageMonat[12] = { 31,30,31,28,31,30,31,31,30,31,30,31 };
 
-
-//Standardkonstruktor
+/**
+ * @brief Standardkonstruktor
+ */
 Datum::Datum()
 {
     //aktuelle Zeit einlesen
@@ -30,7 +31,12 @@ Datum::Datum()
     jahr  = aktuellesDatum->tm_year + 1900;
 }
 
-// Konstruktor
+/**
+ * @brief Konstruktor mit Tag, Monat und Jahr
+ * @param initTag der Tag
+ * @param initMonat der Monat
+ * @param initJahr das Jahr
+ */
 Datum::Datum(int initTag, int initMonat, int initJahr)
 : tag(initTag)
 , monat(initMonat)
@@ -38,13 +44,18 @@ Datum::Datum(int initTag, int initMonat, int initJahr)
 {
 }
 
-// Destruktor
+/**
+ * @brief Standarddestruktor
+ */
 Datum::~Datum(void)
 {
 }
 
-
-// Ausgabe des Datums in einen Ausgabestream
+/**
+ * @brief Gibt ein Datum aus
+ * @param out der output stream
+ * @return void
+ */
 void Datum::ausgabe(std::ostream& out) const
 {
     out << tag << ".";
@@ -58,7 +69,11 @@ void Datum::ausgabe(std::ostream& out) const
     out << monat << "." << jahr;
 }
 
-// Funktion liest aus einem Eingabestream ein Datum ein
+/**
+ * @brief Funktion liest aus einem Eingabestream ein Datum ein
+ * @param in der input stream
+ * @return void
+ */
 void Datum::eingabe(std::istream& in)
 {
     std::string DatumString;
@@ -127,8 +142,13 @@ void Datum::eingabe(std::istream& in)
     }
 }
 
-
-// Überladener Subtraktions-Operator
+/**
+ * @brief Überladener Substraktionsoperator
+ * Gibt die Monatsdifferenz zwischen zwei Operatoren
+ *
+ * @param datum das zu verlgeichende Datum
+ * @return Monatsdifferenz
+ */
 int Datum::operator-(const Datum datum) const
 {
     int tagDiff = tag - datum.tag;
@@ -145,8 +165,13 @@ int Datum::operator-(const Datum datum) const
     return monatDiff + 12 * jahrDiff;
 }
 
-
-
+/**
+ * @brief Überladener Additionsoperator
+ * Gibt das Datum addiert mit den eingegebenen Tagen
+ *
+ * @param anzahl_Tage zu addierende Tage
+ * @return neues Datum
+ */ 
 Datum Datum::operator+(const int anzahl_Tage) const
 {
     int tagNeu = tag + anzahl_Tage;
