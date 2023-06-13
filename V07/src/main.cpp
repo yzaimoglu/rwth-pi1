@@ -20,7 +20,7 @@ void student_print(std::vector<Student> studentVector);
 void student_print_reverse(std::vector<Student> studentVector);
 std::vector<Student> student_read_file(std::string dateiName);
 void student_write_file(std::vector<Student> studentVector, std::string dateiName);
-void student_sort(std::vector<Student> studentVector);
+std::vector<Student> student_sort(std::vector<Student> studentVector);
 
 int main()
 {
@@ -58,6 +58,7 @@ int main()
                   << "(6): Datenelement vorne hinzufügen" << std::endl
                   << "(7): Daten aus einer Datei einlesen" << std::endl
                   << "(8): Daten in eine Datei sichern" << std::endl 
+				  << "(9): Sortieren" << std::endl
                   << "(0): Beenden" << std::endl;
         std::cin >> abfrage;
         std::cin.ignore(10, '\n');
@@ -213,6 +214,12 @@ int main()
                     student_write_file(studentenListe, dateiName);
                     break;
                 }
+            case '9':
+				{
+					studentenListe = student_sort(studentenListe);
+					std::cout << "Liste wurde sortiert" << std::endl;
+				}
+				break;
             case '0':
                 std::cout << "Das Programm wird nun beendet";
                 break;
@@ -361,6 +368,7 @@ void student_write_file(std::vector<Student> studentVector, std::string dateiNam
  * @param studentVector Die Studentenliste
  * @return Die sortierte Studentenliste
  */
-void student_sort(std::vector<Student> studentVector) {
+std::vector<Student> student_sort(std::vector<Student> studentVector) {
     std::sort(studentVector.begin(), studentVector.end());
+    return studentVector;
 }

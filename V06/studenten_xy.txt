@@ -6,10 +6,6 @@ Am Markt 1
 Vera Schmitt
 23.07.1982
 Gartenstr. 23
-12345
-Siggi Baumeister
-23.04.1983
-Ahornstr.55
 64567
 Paula Peters
 9.01.1981
@@ -22,7 +18,3 @@ Wuellnerstr.9
 Tobias Mueller
 21.07.1985
 Weidenweg 15
-990022
-Test Person
-22.09.2002
-Teststr. 44

@@ -15,7 +15,7 @@
 void student_push_front(std::vector<Student> studentVector, Student student);
 void student_pop_front(std::vector<Student> studentVector);
 Student student_get(std::vector<Student> studentVector, int matrikelnummer);
-void student_delete(std::vector<Student> studentVector, int matrikelnummer);
+std::vector<Student> student_delete(std::vector<Student> studentVector, int matrikelnummer);
 void student_print(std::vector<Student> studentVector);
 void student_print_reverse(std::vector<Student> studentVector);
 std::vector<Student> student_read_file(std::string dateiName);
@@ -145,7 +145,7 @@ int main()
 					if(student.getMatNr() != 0) {
 						std::cout << "Der folgende Student ist geloescht worden:" << std::endl;
 						student.ausgabe();
-						student_delete(studentenListe, matrikelnummer);
+						studentenListe = student_delete(studentenListe, matrikelnummer);
 					} else {
 						std::cout << "Der Student mit der Matrikelnummer " << matrikelnummer << " ist nicht in der Liste." << std::endl;
 					}
@@ -266,12 +266,13 @@ Student student_get(std::vector<Student> studentVector, int matrikelnummer) {
  * @param matrikelnummer Matrikelnummer des zu löschenden Studenten
  * @return void
  */
-void student_delete(std::vector<Student> studentVector, int matrikelnummer) {
+std::vector<Student> student_delete(std::vector<Student> studentVector, int matrikelnummer) {
     for(auto it = studentVector.begin(); it != studentVector.end(); ++it) {
         if(it->getMatNr() == matrikelnummer) {
             studentVector.erase(it);
         }
     };
+    return studentVector;
 }
 
 /**
