@@ -249,7 +249,7 @@ void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpiel
 
 				// Weitermachen bis Spielfeldrand erreicht wird oder leeres Feld gefunden wird
 				// 0 = leeres Feld
-				while(aufSpielfeld(posY + naechsteY, posX + naechsteX) && spielfeld[posY + naechsteY][posX + naechsteX] != 0) {
+				while(aufSpielfeld(posY + naechsteY, posX + naechsteX) || spielfeld[posY + naechsteY][posX + naechsteX] != 0) {
 					durchgefuehrt++;
 					if(spielfeld[posY + naechsteY][posX + naechsteX] == aktuellerSpieler) {
 						// Ändern der Felder
