@@ -192,13 +192,13 @@ bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSp
         {
             // Hier erfolgt jetzt Ihre Implementierung ...
         	// Gegnerischer Stein in benachbartem Feld?
-        	if(aufSpielfeld(posY + i, posX + j) && spielfeld[posY + i][posX + j] == gegner) {
+        	if(aufSpielfeld(posX + j, posY + i) && spielfeld[posY + i][posX + j] == gegner) {
         		// Weitere Untersuchung in gleiche Richtung
         		int naechsteY = 2 * i;
         		int naechsteX = 2 * j;
         		// Weitermachen bis Spielfeldrand erreicht wird oder leeres Feld gefunden wird
         		// 0 = leeres Feld
-        		while(aufSpielfeld(posY + naechsteY, posX + naechsteX) && spielfeld[posY + naechsteY][posX + naechsteX] != 0) {
+        		while(aufSpielfeld(posX + naechsteX, posY + naechsteY) && spielfeld[posY + naechsteY][posX + naechsteX] != 0) {
         			if(spielfeld[posY + naechsteY][posX + naechsteX] == aktuellerSpieler) {
         				return true;
         			}
@@ -239,7 +239,7 @@ void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpiel
             //
             // Hier erfolgt jetzt Ihre Implementierung ...
 			// Gegnerischer Stein in benachbartem Feld?
-			if(aufSpielfeld(posY + i, posX + j) && spielfeld[posY + i][posX + j] == gegner) {
+			if(aufSpielfeld(posX + j, posY + i) && spielfeld[posY + i][posX + j] == gegner) {
 				// Weitere Untersuchung in gleiche Richtung
 				int naechsteY = i;
 				int naechsteX = j;
@@ -249,14 +249,15 @@ void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpiel
 
 				// Weitermachen bis Spielfeldrand erreicht wird oder leeres Feld gefunden wird
 				// 0 = leeres Feld
-				while(aufSpielfeld(posY + naechsteY, posX + naechsteX) || spielfeld[posY + naechsteY][posX + naechsteX] != 0) {
+				while(aufSpielfeld(posX + naechsteX, posY + naechsteY) && spielfeld[posY + naechsteY][posX + naechsteX] != 0) {
 					durchgefuehrt++;
 					if(spielfeld[posY + naechsteY][posX + naechsteX] == aktuellerSpieler) {
 						// Ändern der Felder
-						for(int k = 0; k < durchgefuehrt; k++) {
+						for(int k = 1; k < durchgefuehrt; k++) {
 							spielfeld[posY + i * k][posX + j * k] = aktuellerSpieler;
 						}
 
+						spielfeld[posY][posX] = aktuellerSpieler;
 						// Nachdem alle Steine geändert wurden, kann mit der while-Loop aufgehört werden
 						break;
 					}
@@ -360,7 +361,7 @@ void spielen(const int spielerTyp[2])
     // solange noch Zuege bei einem der beiden Spieler moeglich sind
     //
     // Hier erfolgt jetzt Ihre Implementierung ...
-    while(moeglicheZuege(spielfeld, aktuellerSpieler) && moeglicheZuege(spielfeld, 3 - aktuellerSpieler)) {
+    while(moeglicheZuege(spielfeld, aktuellerSpieler) || moeglicheZuege(spielfeld, 3 - aktuellerSpieler)) {
     	// Aussetzen des Spielers, wenn kein Zug für den Spieler vorhanden ist
     	if(moeglicheZuege(spielfeld, aktuellerSpieler)) {
     		std::cout << "Spielzug von SPIELER " << aktuellerSpieler << ": " << std::endl;
@@ -372,7 +373,7 @@ void spielen(const int spielerTyp[2])
     	// Spieler wird zum Gegner
     	aktuellerSpieler = 3 - aktuellerSpieler;
     }
-    
+
     // Gewinnerbekanntgabe
     switch (gewinner(spielfeld))
     {
